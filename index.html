@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Admin Panel</h2>
+      <ul>
+        <li><a href="#" onclick="showSection('orders')">Orders</a></li>
+        <li><a href="#" onclick="showSection('products')">Products</a></li>
+        <li><a href="#" onclick="showSection('categories')">Categories</a></li>
+        <li><a href="#" onclick="showSection('promotions')">Promotions</a></li>
+        <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1>Administrator Dashboard</h1>
+      </header>
+
+      <!-- Orders Section -->
+      <section id="orders" class="content-section active">
+        <h2>Manage Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="order-list">
+            <!-- Orders will be populated here via JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="content-section">
+        <h2>Add New Product</h2>
+        <form id="product-form">
+          <label for="product-name">Product Name:</label>
+          <input type="text" id="product-name" required>
+
+          <label for="product-price">Price:</label>
+          <input type="number" id="product-price" required>
+
+          <label for="product-category">Category:</label>
+          <select id="product-category">
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home</option>
+          </select>
+
+          <label for="product-stock">Stock Quantity:</label>
+          <input type="number" id="product-stock" required>
+
+          <button type="submit">Add Product</button>
+        </form>
+      </section>
+
+      <!-- Categories Section -->
+      <section id="categories" class="content-section">
+        <h2>Add New Category</h2>
+        <form id="category-form">
+          <label for="category-name">Category Name:</label>
+          <input type="text" id="category-name" required>
+
+          <button type="submit">Add Category</button>
+        </form>
+      </section>
+
+      <!-- Promotions Section -->
+      <section id="promotions" class="content-section">
+        <h2>Add New Promotion</h2>
+        <form id="promotion-form">
+          <label for="promotion-name">Promotion Name:</label>
+          <input type="text" id="promotion-name" required>
+
+          <label for="discount">Discount Percentage:</label>
+          <input type="number" id="discount" required>
+
+          <button type="submit">Add Promotion</button>
+        </form>
+      </section>
+
+      <!-- Settings Section -->
+      <section id="settings" class="content-section">
+        <h2>Settings</h2>
+        <p>Platform settings go here.</p>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
