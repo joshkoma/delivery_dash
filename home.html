@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <img src="fplogo.png" height="70">
+      <ul>
+        <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+        <li><a href="#" onclick="showSection('orders')">Orders</a></li>
+        <li><a href="#" onclick="showSection('products')">Products</a></li>
+        <li><a href="#" onclick="showSection('categories')">Categories</a></li>
+        <li><a href="#" onclick="showSection('promotions')">Promotions</a></li>
+        <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+        <li><a href="index.html" >Logout</a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Orders Section -->
+      <section id="orders" class="content-section active">
+        <h2>Manage Orders</h2>
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="order-list">
+            <!-- Orders will be populated here via JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Products Section -->
+      <section id="products" class="content-section">
+        <div>
+        <h2>Add New Product</h2><br>
+        <form id="product-form">
+          <div class="form-group">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" required>
+          
+      
+         
+            <label for="product-price">Price:</label>
+            <input type="number" id="product-price" required>
+         
+      
+          
+            <label for="product-category">Category:</label>
+            <select id="product-category">
+              <option value="electronics">Electronics</option>
+              <option value="clothing">Clothing</option>
+              <option value="home">Home</option>
+            </select>
+          
+      
+         
+            <label for="product-stock">Stock Quantity:</label>
+            <input type="number" id="product-stock" required>
+          
+      
+          <button type="submit" class="btn-submit">Add</button> </div>
+        </form> </div>
+        <div>
+        <!-- <section id="product-list" class="content-section"> -->
+        <br>
+          <table class="products-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Date Added</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>L'Oreal Revitalift Cream</td>
+                <td>SKU001</td>
+                <td>50</td>
+                <td>UGX 30,000</td>
+                <td>Skincare</td>
+                <td>2024-10-01</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+              </tr>
+              <tr>
+                <td>Maybelline Fit Me Foundation</td>
+                <td>SKU002</td>
+                <td>75</td>
+                <td>UGX 45,000</td>
+                <td>Makeup</td>
+                <td>2024-09-25</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+              </tr>
+              <tr>
+                <td>Neutrogena Hydro Boost Gel</td>
+                <td>SKU003</td>
+                <td>40</td>
+                <td>UGX 60,000</td>
+                <td>Skincare</td>
+                <td>2024-09-30</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+              </tr>
+              <tr>
+                <td>MAC Matte Lipstick</td>
+                <td>SKU004</td>
+                <td>100</td>
+                <td>UGX 55,000</td>
+                <td>Makeup</td>
+                <td>2024-10-05</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+              </tr>
+              <tr>
+                <td>Nivea Body Lotion</td>
+                <td>SKU005</td>
+                <td>30</td>
+                <td>UGX 25,000</td>
+                <td>Body Care</td>
+                <td>2024-09-20</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+              </tr>
+            </tbody>
+          </table> </div>
+        <!-- </section> -->
+        
+      </section>
+
+      
+
+      <!-- Categories Section -->
+      <section id="categories" class="content-section">
+        <h2>Add New Category</h2> <br>
+        
+        <form id="category-form">
+          <div class="form-group"> <label for="category-name">Category Name:</label>
+          <input type="text" id="category-name" required>
+
+          <button type="submit" class="btn-submit">Add Category</button></div>
+        </form>
+      </section>
+
+      <!-- Promotions Section -->
+      <section id="promotions" class="content-section">
+        <h2>Add New Promotion</h2><br>
+        <form id="promotion-form">
+          <div class="form-group">
+          <label for="promotion-name">Promotion Name:</label>
+          <input type="text" id="promotion-name" required> 
+
+         
+          <label for="discount">Discount Percentage:</label>
+          <input type="number" id="discount" required>
+          
+
+          <button type="btn-submit" class="btn-submit">Add Promotion</button> </div>
+        </form>
+      </section>
+
+      <!-- Settings Section -->
+      <section id="settings" class="content-section">
+        <h2>Settings</h2><br>
+        <p>Platform settings go here.</p>
+      </section>
+      
+      
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="content-section">
+        <h2>Analytics</h2><br>
+        <div class="card-section">
+          <div class="analytics-card">
+            <h3 class="card-title">Total Sales</h3>
+            <p class="card-amount">UGX 20,000,000</p>
+          </div>
+          <div class="analytics-card">
+            <h3 class="card-title">Total Orders</h3>
+            <p class="card-amount">29</p>
+          </div>
+          <div class="analytics-card">
+            <h3 class="card-title">Packing</h3>
+            <p class="card-amount">5</p>
+          </div>
+          <div class="analytics-card">
+            <h3 class="card-title">Verification</h3>
+            <p class="card-amount">12</p>
+          </div>
+          <div class="analytics-card">
+            <h3 class="card-title">Out for Delivery</h3>
+            <p class="card-amount">10</p>
+          </div>
+          <div class="analytics-card">
+            <h3 class="card-title">Cancelled Orders</h3>
+            <p class="card-amount">2</p>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

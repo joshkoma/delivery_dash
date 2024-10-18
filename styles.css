@@ -48,7 +48,7 @@
   }
   
   .sidebar ul li a:hover {
-    background-color: #6c757d;
+    background-color: #9cc224;
   }
   
   .main-content {
@@ -58,7 +58,7 @@
   }
   
   header {
-    background-color: #007bff;
+    background-color: #9cc224;
     color: white;
     padding: 20px;
     text-align: center;
@@ -77,3 +77,209 @@
     display: block;
   }
   
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-table thead th {
+    background-color: #f2f2f2; /* Header background */
+    color: black;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .order-table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+  }
+  
+  .order-table tbody tr:hover {
+    background-color: #f2f2f2; /* Row hover effect */
+  }
+  
+  .order-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .order-table, .order-table thead, .order-table tbody, .order-table th, .order-table td, .order-table tr {
+      display: block;
+      width: 100%;
+    }
+  
+    .order-table thead {
+      display: none;
+    }
+  
+    .order-table tbody tr {
+      margin-bottom: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .order-table tbody td {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      text-align: right;
+    }
+  
+    .order-table tbody td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #4CAF50;
+      flex-basis: 30%;
+      text-align: left;
+    }
+  }
+
+/* Flexbox Form Styling */
+#product-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Gap between fields */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Gap between label and input */
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+  min-width: 150px; /* To align the labels */
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 200px; /* Set a fixed width for inputs */
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Button Styling */
+.btn-submit {
+  padding: 12px 20px;
+  background-color: #9cc224;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+.analytics-card {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #495057;
+  border-radius: 10px;
+  width: 250px; /* Fixed width for all cards */
+  text-align: center;
+}
+.card-title {
+  font-size: 1.2rem;
+  color: #495057;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Amount Styling */
+.card-amount {
+  font-size: 1.6rem;
+  color: #28a745; /* Green for financial amounts */
+  font-weight: bold;
+}
+.card-section {
+  display: flex;
+  flex-wrap: wrap; /* Ensures the items wrap to a new row when there is no space */
+  gap: 100px; /* Space between cards */
+  justify-content: flex-start; /* Aligns the items from left to right */
+}
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.products-table thead {
+  background-color: #f8f9fa;
+}
+
+.products-table th, .products-table td {
+  padding: 12px 15px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.products-table th {
+  background-color: #f2f2f2;
+  color: black;
+  font-weight: bold;
+}
+
+
+.products-table td button {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.products-table tr:hover {
+  background-color: #f2f2f2;
+  
+}
+
+.products-table td button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.products-table td button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+.styled-select {
+
+  padding: 10px;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* Background for the dropdown */
+  font-size: 1rem;
+  color: #495057; /* Text color */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 12px; /* Set size for the arrow */
+  cursor: pointer; /* Add pointer for interaction */
+}

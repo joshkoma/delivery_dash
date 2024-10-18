@@ -1,8 +1,8 @@
 // Sample order data
 let orders = [
-    { id: 1, customer: 'John Doe', status: 'Pending' },
-    { id: 2, customer: 'Jane Smith', status: 'Processing' },
-    { id: 3, customer: 'Mike Johnson', status: 'Out for Delivery' }
+    { id: 12254, customer: 'Okello Peter', phone:'0772123445', address:'Kampala', status: 'Pending' },
+    { id: 26525, customer: 'Kakooza Mark', phone:'0753254445',address:'Bugolobi', status: 'Processing' },
+    { id: 31478, customer: 'Henry Mulyowa', phone:'0784526874', address:'Makerere',status: 'Out for Delivery' }
   ];
   
   // Display orders on page load
@@ -15,8 +15,10 @@ let orders = [
       row.innerHTML = `
         <td>${order.id}</td>
         <td>${order.customer}</td>
+        <td>${order.phone}</td>
+        <td>${order.address}</td>
         <td>
-          <select onchange="updateOrderStatus(${order.id}, this.value)">
+          <select class="styled-select" onchange="updateOrderStatus(${order.id}, this.value)">
             <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''}>Pending</option>
             <option value="Processing" ${order.status === 'Processing' ? 'selected' : ''}>Processing</option>
             <option value="Order Verification" ${order.status === 'Order Verification' ? 'selected' : ''}>Order Verification</option>

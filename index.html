@@ -3,103 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecommerce Admin Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Login Page</title>
+  <style>
+    /* Center the login form on the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      background-color: #fff;
+      justify-content: center;
+      padding: 20px 20px 20px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 350px;
+     
+    }
+
+    .logo-container{
+        display: flex;
+  flex-direction: column;
+  align-items: center
+
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .login-container input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 50%;
+      padding: 10px;
+      background-color: #9cc224;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #218838;
+    }
+
+    .error-message {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <nav class="sidebar">
-      <h2>Admin Panel</h2>
-      <ul>
-        <li><a href="#" onclick="showSection('orders')">Orders</a></li>
-        <li><a href="#" onclick="showSection('products')">Products</a></li>
-        <li><a href="#" onclick="showSection('categories')">Categories</a></li>
-        <li><a href="#" onclick="showSection('promotions')">Promotions</a></li>
-        <li><a href="#" onclick="showSection('settings')">Settings</a></li>
-      </ul>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <header>
-        <h1>Administrator Dashboard</h1>
-      </header>
-
-      <!-- Orders Section -->
-      <section id="orders" class="content-section active">
-        <h2>Manage Orders</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="order-list">
-            <!-- Orders will be populated here via JS -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Products Section -->
-      <section id="products" class="content-section">
-        <h2>Add New Product</h2>
-        <form id="product-form">
-          <label for="product-name">Product Name:</label>
-          <input type="text" id="product-name" required>
-
-          <label for="product-price">Price:</label>
-          <input type="number" id="product-price" required>
-
-          <label for="product-category">Category:</label>
-          <select id="product-category">
-            <option value="electronics">Electronics</option>
-            <option value="clothing">Clothing</option>
-            <option value="home">Home</option>
-          </select>
-
-          <label for="product-stock">Stock Quantity:</label>
-          <input type="number" id="product-stock" required>
-
-          <button type="submit">Add Product</button>
-        </form>
-      </section>
-
-      <!-- Categories Section -->
-      <section id="categories" class="content-section">
-        <h2>Add New Category</h2>
-        <form id="category-form">
-          <label for="category-name">Category Name:</label>
-          <input type="text" id="category-name" required>
-
-          <button type="submit">Add Category</button>
-        </form>
-      </section>
-
-      <!-- Promotions Section -->
-      <section id="promotions" class="content-section">
-        <h2>Add New Promotion</h2>
-        <form id="promotion-form">
-          <label for="promotion-name">Promotion Name:</label>
-          <input type="text" id="promotion-name" required>
-
-          <label for="discount">Discount Percentage:</label>
-          <input type="number" id="discount" required>
-
-          <button type="submit">Add Promotion</button>
-        </form>
-      </section>
-
-      <!-- Settings Section -->
-      <section id="settings" class="content-section">
-        <h2>Settings</h2>
-        <p>Platform settings go here.</p>
-      </section>
-    </div>
+  <div class="login-container">
+    <div class="logo-container"><img src="fplogo2.png" height="70"></div><br>
+    <div id="error" class="error-message">Incorrect username or password</div>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      
+     <div class="logo-container"><button type="submit">Login</button></div>
+    </form>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    // JavaScript to handle login form submission
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the form from submitting
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Simple check for the correct username and password
+      if (username === 'admin' && password === 'admin') {
+        window.location.href = 'home.html'; // Redirect to home.html
+      } else {
+        // Show an error message if login is incorrect
+        document.getElementById('error').style.display = 'block';
+      }
+    });
+  </script>
+
 </body>
 </html>
